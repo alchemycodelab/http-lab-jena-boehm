@@ -15,4 +15,25 @@ describe('app routes', () => {
       .send('hi');
     expect(response.text).toEqual('hi');
   });
+
+  it('returns html with an h1 and the word red', async() => {
+    const response = await request(app)
+      .get('/red');
+
+    expect(response.text).toEqual('<h1>red</h1>');
+  });
+
+  it('returns html with an h1 and the word green', async() => {
+    const response = await request(app)
+      .get('/green');
+
+    expect(response.text).toEqual('<h1>green</h1>');
+  });
+
+  it('returns html with an h1 and the word blue', async() => {
+    const response = await request(app)
+      .get('/blue');
+
+    expect(response.text).toEqual('<h1>blue</h1>');
+  });
 });
